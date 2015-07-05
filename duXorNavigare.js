@@ -18,13 +18,14 @@
 var duXorNavigare = {
     pageIds:['#licni-podaci','#radno-iskustvo','#strucnost','#edukacija','#licne-osobine'],
     currentPage:0,
-    topScrollHeight:200,
+    topScrollHeight:'auto',
     fadeAnimationSpeed:400,
     scrollSpeed:750,
     isScrollTop:true,
     isScrollNext:true,
     start:function(){
         $('#scrollToTop').hide();
+        if(this.topScrollHeight=='auto') this.topScrollHeight=window.innerHeight;
         if(this.isScrollTop || this.isScrollNext) this.addScrollButtonStyle();
         if(this.isScrollTop) this.addScrollButton();
         if(this.isScrollNext) this.addScrollNext();
